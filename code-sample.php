@@ -1,8 +1,8 @@
 <?php
-		$cookie_name = "user";
-		$cookie_value = "John Doe";
-		setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-		?>
+	if($_POST[""]!=""){
+		exit;
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,13 +23,7 @@
 
 	    <!-- Custom styles for this template -->
 	    <link href="css/resume.min.css" rel="stylesheet">
-	    <?php
-			if(!isset($_COOKIE[$cookie_name])){
-				echo "Broken :(";
-			}else {
-				echo "Value is: " . $_COOKIE[$cookie_name];
-			}
-		?>
+	    
 	</head>
 
 	<body id="page-top">
