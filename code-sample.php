@@ -1,6 +1,12 @@
 <?php
-	if($_POST[""]!=""){
-		exit;
+	$file=fopen("config.txt", "r") or die("Problem loading config");
+	$configInfo=fread($file, filesize("config.txt"));
+	fclose($file);
+
+	if($configInfo!=$_POST["psw"]){
+		http_response_code(403);
+		//include('my_403.php'); //Make custom 403 page
+		die();
 	}
 ?>
 <!DOCTYPE html>
